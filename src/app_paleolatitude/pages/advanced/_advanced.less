@@ -1,0 +1,69 @@
+@import '../../../shared/styling/variables.less';
+
+
+.page.advanced {
+    background: @elm_background_active;
+    border-bottom: 1px solid var(--elm_primary);
+    box-shadow: inset 0px -10px 4px -10px fade(@elm_primary_active, 40%);
+
+    .content_wrapper {
+        padding: 2rem 0;
+    }
+
+    .locationDetails.header {
+        position: relative;
+    }
+
+    .positionaldialog {
+        position: absolute;
+        right: 0;
+        top: 1.7rem;
+
+        .content {
+            padding: 0.5rem;
+            width: auto;
+        }
+    }
+
+    .referenceframe {
+        select {
+            width: auto;
+        }
+    }
+
+    .axisOptions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .bottom_actions {
+        position: fixed;
+        z-index: 999;
+
+        bottom: 2rem;
+
+        display: flex;
+        pointer-events: none;
+
+        & > button {
+            pointer-events: all;
+        }
+    }
+
+    .bulkstatus {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: .6rem;
+
+        text-align: center;
+
+        min-height: 10rem;
+        max-width: 25rem;
+    }
+
+
+
+}

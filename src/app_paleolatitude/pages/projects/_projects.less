@@ -1,0 +1,26 @@
+@import '../../../shared/styling/variables.less';
+
+
+.page.projects {
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            border: 1px solid currentColor;
+            margin-top: .5rem;
+            
+            cursor: pointer;
+            transition: opacity .15s;
+
+            &:hover {
+                opacity: .6;
+            }
+        }
+    }
+
+}

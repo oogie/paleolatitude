@@ -1,0 +1,118 @@
+@import '../../shared/styling/variables.less';
+
+
+
+
+.comp.map {
+
+    flex-grow: 1;
+    overflow: hidden;
+
+    &:focus {
+        outline: none;
+    }
+
+    #map {
+        width: 100%;
+        height: 70vh;
+        @media @when_mobile {
+            height: 45vh;
+        }
+        background: @elm_background_active;
+
+        .ol-selectable:has(.selected) {
+            z-index: 100;
+        }
+    }
+
+    #newLocMarker, .locMarker {
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: black;
+        filter: drop-shadow(1px 1px 0px #fff);
+
+        .description, .description a {
+            pointer-events: auto;
+            color: @txt_default;
+            font-size: 0.8rem;
+        }
+    }
+
+    #newLocMarker {
+        width: 8em;
+        left: -4em;
+        top: -3.1em;
+
+        pointer-events: none;
+        text-align: center;
+    }
+
+    .locMarker {
+        width: 30px;
+        left: -15px;
+        top: -2.1em;
+
+
+        .icon {
+            &:not(.loading) svg {
+                stroke: black;
+                transition: transform .15s;
+                transform-origin: bottom center;
+            }
+            &.error {
+                svg {
+                    stroke: transparent;
+                }
+            }
+        }
+
+
+        &.highlight .icon:not(.loading) svg, .icon:not(.loading) svg:hover {
+            transform: scale(1.6);
+        }
+
+        &.selected {
+            .icon {
+                svg {
+                    transform: scale(1.6);
+                    stroke-width: 1.7rem;
+                }
+            }
+            .selectedbox {
+                display: block;
+            }
+        }
+
+
+
+        .selectedbox {
+            display: none;
+
+            position: absolute;
+            top: 2.1rem;
+            left: -100px;
+
+            width: 230px;
+
+            hyphens: auto;
+        }
+
+        .remove {
+            display: block;
+            text-align: center;
+        }
+
+        .errorMsg {
+            display: block;
+            line-height: 1.2rem;
+            font-size: 0.7rem;
+        }
+
+    }
+
+}

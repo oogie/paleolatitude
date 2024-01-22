@@ -1,0 +1,19 @@
+@import '../../shared/styling/variables.less';
+
+
+
+.comp.iplocbtn {
+    align-items: center;
+    @media @when_mobile {
+        flex-direction: row;
+    }
+
+    .statusicon {
+        font-size: 0.8rem;
+        cursor: pointer;
+
+        svg {
+            vertical-align: middle;
+        }
+    }
+}

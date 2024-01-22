@@ -1,0 +1,154 @@
+@-webkit-keyframes vex-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes vex-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-webkit-keyframes vex-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); } }
+
+@keyframes vex-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); } }
+
+@-webkit-keyframes vex-pulse {
+  0% {
+    box-shadow: inset 0 0 0 300px transparent; }
+  70% {
+    box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25); }
+  100% {
+    box-shadow: inset 0 0 0 300px transparent; } }
+
+@keyframes vex-pulse {
+  0% {
+    box-shadow: inset 0 0 0 300px transparent; }
+  70% {
+    box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25); }
+  100% {
+    box-shadow: inset 0 0 0 300px transparent; } }
+
+body.vex-open {
+    overflow: auto; }
+
+.vex-overlay {
+    -webkit-animation: vex-fadein .3s;
+    animation: vex-fadein .3s;
+    background: rgba(0, 0, 0, 0.2); }
+
+.vex.vex-theme {
+  padding-top: 100px;
+  padding-bottom: 160px; }
+  .vex.vex-theme.vex-closing .vex-content {
+    -webkit-animation: vex-flyout .3s forwards;
+    animation: vex-flyout .3s forwards; }
+  .vex.vex-theme .vex-content {
+    -webkit-animation: vex-flyin .3s;
+    animation: vex-flyin .3s; }
+  .vex.vex-theme .vex-content {
+    padding: 1em 2em;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 28rem;
+    overflow: hidden;}
+
+  .vex.vex-theme .vex-close {
+    border-radius: 0 5px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer; }
+    .vex.vex-theme .vex-close:before {
+      border-radius: 3px;
+      position: absolute;
+      content: "\00D7";
+      font-size: 26px;
+      line-height: 31px;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      top: 3px;
+      right: 3px;
+      color: #bbb;
+      background: transparent; }
+    .vex.vex-theme .vex-close:hover:before, .vex.vex-theme .vex-close:active:before {
+      color: #777;
+      background: #e0e0e0; }
+  .vex.vex-theme .vex-dialog-form .vex-dialog-message {
+    margin-bottom: .5em; }
+  .vex.vex-theme .vex-dialog-form .vex-dialog-input {
+    margin-bottom: 1em; }
+    .vex.vex-theme .vex-dialog-form .vex-dialog-input select, .vex.vex-theme .vex-dialog-form .vex-dialog-input textarea, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="date"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="datetime"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="datetime-local"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="email"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="month"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="number"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="password"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="search"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="tel"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="text"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="time"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="url"], .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="week"] {
+      border-radius: 3px;
+      background: #fff;
+      width: 100%;
+      padding: .25em .67em;
+      border: 1px solid #848484;
+      min-height: 2.5em;
+      margin: 0 0 .25em;
+      font-size: 1rem;
+      box-shadow: inset 0 0 0 1px #ddd; }
+      .vex.vex-theme .vex-dialog-form .vex-dialog-input select:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input textarea:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="date"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="datetime"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="datetime-local"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="email"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="month"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="number"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="password"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="search"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="tel"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="text"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="time"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="url"]:focus, .vex.vex-theme .vex-dialog-form .vex-dialog-input input[type="week"]:focus {
+        box-shadow: inset 0 0 0 1px #3288e6;
+        outline: none; }
+  .vex.vex-theme .vex-dialog-form .vex-dialog-buttons {
+    *zoom: 1; }
+    .vex.vex-theme .vex-dialog-form .vex-dialog-buttons:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .vex.vex-theme .vex-dialog-button {
+      float: right;
+      margin-left: 12px;
+      margin-top: 12px;
+
+      background: transparent;
+      border: 0px;
+      border-radius: 2px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+   }
+
+   .vex.vex-theme .vex-dialog-button:hover {
+       background: #e5e5e5;
+   }
+   .vex.vex-theme .vex-dialog-button:active {
+       background: #d5d5d5;
+   }
+
+.vex-loading-spinner.vex-theme {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 0.5em rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  width: 0;
+  height: 0;
+  border: 1.2em solid #bbb;
+  border-top-color: #f0f0f0;
+  border-bottom-color: #f0f0f0; }

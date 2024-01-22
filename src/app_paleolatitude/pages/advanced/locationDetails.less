@@ -1,0 +1,47 @@
+@import '../../../shared/styling/variables.less';
+
+
+.comp.locationDetails {
+    display: grid;
+    grid-template-columns: 1.25em 1fr 1fr 1.5fr 1fr 1fr 1fr 1.2fr;
+    gap: .5rem;
+    margin-bottom: .2rem;
+
+    @media @when_mobile {
+        grid-template-columns: 1.25em 1fr 1fr 1.5fr;
+    }
+
+
+
+    &.loading {
+        opacity: .6;
+        pointer-events: none;
+    }
+
+    .statusicon {
+        @media @when_mobile {
+            grid-row: 1 / 4;
+        }
+
+        font-size: 0.6rem;
+        cursor: pointer;
+
+        svg {
+            vertical-align: middle;
+        }
+    }
+
+    .errormsg {
+        color: @txt_error;
+        line-height: 1.7;
+        grid-column: 2 / -1;
+    }
+
+    .removeloc {
+        text-align: right;
+        @media @when_mobile {
+            grid-column: 2 / -1;
+        }
+    }
+
+}

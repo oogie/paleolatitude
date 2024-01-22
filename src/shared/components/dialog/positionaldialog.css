@@ -1,0 +1,120 @@
+
+
+.positionaldialog {
+    --internal_bg-default: var(--bg-default, #ffffff);
+    --internal_txt-default: var(--txt-default, #000000);
+    --internal_txt-light: var(--txt-light, #777777);
+    --internal_radius: var(--radius, 3px);
+
+    position: relative;
+    width: 0px;
+    height: 0px;
+
+    &.anchor-left.flow-left {
+        width: 0;
+        .content {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.anchor-left.flow-right {
+        .content {
+            left: 0;
+        }
+    }
+
+    &.anchor-right.flow-left {
+        width: 100%;
+        .content {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.anchor-right.flow-right {
+        width: 100%;
+        .content {
+            left: 100%;
+        }
+    }
+
+    &.direction-up {
+        .content {
+            top: auto;
+            bottom: 100%;
+        }
+    }
+
+    &.direction-middle {
+        .content {
+            top: auto;
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        &.closed {
+            .content {
+                transform: translateY(calc(50% - 1rem));
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        border-radius: var(--internal_radius);
+        border: 1px solid var(--internal_txt-light);
+        background: var(--internal_bg-default);
+        color: var(--internal_txt-default);
+        box-shadow: 1px 1px 2px rgba(0,0,0,.4);
+
+        z-index: 1010;
+
+        transition: .1s transform, .15s opacity;
+
+        button {
+            white-space: nowrap;
+        }
+    }
+
+
+    &::after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background: black;
+        z-index: -1;
+        opacity: 0;
+
+        transition: .20s opacity;
+    }
+
+
+    &.closed {
+        visibility: hidden;
+
+        .content {
+            transform: translateY(-1rem);
+            opacity: 0;
+        }
+    }
+
+    &.open {
+        &::after {
+            z-index: 1000;
+            opacity: 0.15;
+        }
+
+        .content {
+            opacity: 1;
+        }
+    }
+}
